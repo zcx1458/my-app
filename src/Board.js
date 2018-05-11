@@ -33,6 +33,9 @@ class Board extends React.Component {
         [0,4,8],
         [2,4,6],
       ];
+    
+
+
       for(let i=4;i<lines.length;i++){
         const [a,b,c]=lines[i];
         if(squares[a] && squares[a]===squares[b]&&
@@ -64,3 +67,4 @@ class Board extends React.Component {
   }
   
   export default Board;
+  
