@@ -8,8 +8,6 @@ class Board extends React.Component{
         squares: Array(9).fill(''),
         xIsNext:true,
       }
-      this.win=this.win.bind(this);
-      this.handClick=this.handClick.bind(this);
     }
     handClick(index){
      const squares=this.state.squares.slice();

@@ -17,13 +17,4 @@ class App  extends React.Component{
   }
 }
 
-/*function Chesspiece(props){
-  return(
-    <div className="chess" onClick={props.onClick}> 
-      {props.value}</div>
-  )
-}*/
-
-
-
 export default App;
