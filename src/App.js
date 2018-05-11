@@ -6,7 +6,7 @@ import Board from './Board.js';
 
 
 class App  extends React.Component{
-  render(){
+  render() {
     return(
       <div>
         <div>欢迎</div>
