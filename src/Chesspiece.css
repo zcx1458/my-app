@@ -1,0 +1,9 @@
+
+.chess{
+    text-align: center;
+    float: left;
+    width: 30%;
+    border:1px solid #ddd; 
+    padding:10px 0;
+    height: 20px  
+}

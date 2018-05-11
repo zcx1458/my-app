@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Chesspiece from './Chesspiece';
+import './Board.css';
 
 class Board extends React.Component {
     constructor(props) {
@@ -42,7 +43,7 @@ class Board extends React.Component {
       return null;
     }
   
-    render(){
+    render() {
       const winner=this.win(this.state.squares);
       let  status;
       if(winner){
