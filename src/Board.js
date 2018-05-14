@@ -19,7 +19,6 @@ class Board extends React.Component {
      this.setState({
        squares:squares,
        xIsNext:!this.state.xIsNext
-  
       });
     }
     win(squares) {
@@ -33,10 +32,7 @@ class Board extends React.Component {
         [0,4,8],
         [2,4,6],
       ];
-    
-
-
-      for(let i=4;i<lines.length;i++){
+      for(let i=0;i<lines.length;i++){
         const [a,b,c]=lines[i];
         if(squares[a] && squares[a]===squares[b]&&
           squares[a]===squares[c]){
@@ -45,7 +41,6 @@ class Board extends React.Component {
       }
       return null;
     }
-  
     render() {
       const winner=this.win(this.state.squares);
       let  status;
@@ -54,7 +49,6 @@ class Board extends React.Component {
       }else{
         status='try again'
       }
-  
       const blocks = [0,1,2,3,4,5,6,7,8]; 
       return (
         <div className='board'>
@@ -65,6 +59,4 @@ class Board extends React.Component {
       )
     }
   }
-  
   export default Board;
-  
