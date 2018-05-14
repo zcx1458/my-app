@@ -9,7 +9,6 @@ class Chesspiece extends React.Component {
         </div>
       )
    }
- 
  }
-
 export default Chesspiece;
+

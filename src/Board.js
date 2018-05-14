@@ -9,11 +9,10 @@ class Board extends React.Component {
         squares: Array(9).fill(''), //方格的状态存储
         xIsNext:true, 
       }
-    }
-    
+    }  
     handClick(index) {
      const squares=this.state.squares.slice();
-     if(this.win(squares)||squares[index] ){ //点过的方格和已经连成线的不再改变
+     if(this.win(squares)||squares[index]) { //点过的方格和已经连成线的不再改变
        return;
      }
      squares[index]=this.state.xIsNext?'x':'O'; //设置被点击的方格的状态
@@ -21,13 +20,13 @@ class Board extends React.Component {
        squares:squares,
        xIsNext:!this.state.xIsNext
       });
-
     }
     checkArray(para,arr) {
-        let processArr = arr.filter(function(value) {
-            return value == para;
-        });
-    
+        let processArr = arr.filter(
+            (value)=>{
+                return value==para
+            }
+        );
         return processArr.length;  // 这里返回数组长度
       }
     win(squares) {//判断输赢情况
@@ -41,13 +40,11 @@ class Board extends React.Component {
         [0,4,8],
         [2,4,6],
       ];
-      
-      const isClick= this.checkArray("",squares);
-      if(isClick>4) return;
-      for(let i=0;i<lines.length;i++){
+      if(this.checkArray("",squares)>4) return;
+      for(let i=0;i<lines.length;i++) {
         const [a,b,c]=lines[i];
         if(squares[a] && squares[a]===squares[b]&&
-          squares[a]===squares[c]){
+          squares[a]===squares[c]) {
             return squares[a];
           }
       }
@@ -55,12 +52,7 @@ class Board extends React.Component {
     }
     render() {
       const winner=this.win(this.state.squares);
-      let  status;
-      if(winner){
-        status='winner';
-      }else{
-        status='try again'
-      }
+      let status=winner?'success':'fail';
       const blocks = [0,1,2,3,4,5,6,7,8]; 
       return (
         <div className='board'>
@@ -72,3 +64,4 @@ class Board extends React.Component {
     }
   }
   export default Board;
+
